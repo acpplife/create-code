@@ -1,0 +1,39 @@
+{
+  "name": "create-code",
+  "version": "0.1.0",
+  "description": "The command tool based on umi antd to create code blocks",
+  "bin": {
+    "create-code": "./bin/create-code"
+  },
+  "repository": {
+    "type": "gitlab",
+    "url": "http://gitlab.gtdreamlife.com/gt-front-end/create-code.git"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
+    "inquirer": "^3.2.2",
+    "@babel/generator": "^7.4.4",
+    "@babel/types": "^7.4.4",
+    "lodash": "^4.17.11",
+    "putout": "^4.23.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-compat": "^2.7.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-hooks": "^1.6.0"
+  },
+  "files": [
+    "bin",
+    "demo-schema",
+    "lib"
+  ]
+}

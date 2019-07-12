@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const chalk = require('chalk');
+const add = require('../lib/add');
+
+const pkg = require('../package.json');
+
+const { log } = console
+
+program.version(pkg.version)
+  .option('add', 'add a new block.')
+  .option('a', 'add a new block.')
+
+program
+  .command('*')
+  .action((env) => {
+    log(chalk.red(`create-code: ${env} is not a create-code command. use create-code --help for help.`));
+  });
+
+program.parse(process.argv);
+
+if (program.add || program.a) {
+  add(process.argv);
+}
+
+if (!process.argv.slice(2).length) {
+  program.outputHelp();
+}
+
