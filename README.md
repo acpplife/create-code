@@ -29,6 +29,11 @@ $ create-code add
 # 配置generatePath路径，默认/**/src/pages，可自定义路径，值为绝对路径
 # 开始生成代码
 ```
+
+### 演示
+
+![](assets/demo.gif)
+
 ### 配置API
 
 * [基础配置](https://www.yuque.com/ssisl/gabiv1/fweu9a)
