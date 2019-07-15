@@ -26,6 +26,7 @@ $ npm install create-code -g
 $ create-code add
 # 选择 `react-antd-table` 类型
 # 输入要生成的代码的配置文件路径，例如： `normalList`、 `../bus`
+# 配置generatePath路径，默认/**/src/pages，可自定义路径，值为绝对路径
 # 开始生成代码
 ```
 ### 配置API
@@ -80,4 +81,8 @@ eslint格式化失败，一般是因为所需依赖未找到。
 
 * 修复eslint获取路径问题
 * 新增项目目录src文件夹存在判断
+
+#### 0.1.4
+
+* 支持generatePath配置，可以指定代码生成的目录
 
