@@ -1,6 +1,8 @@
 # create-code
 
-### 基于umi、antd自动生成CRUD代码的工具. 基本介绍及实现思路见[Babel 在提升前端效率的实践](https://juejin.im/post/5ce2aaea6fb9a07eac05a608)
+### 基于umi、antd自动生成CRUD代码的工具. 
+
+基本介绍及实现思路见[Babel 在提升前端效率的实践](https://juejin.im/post/5ce2aaea6fb9a07eac05a608)
 
 ## 特性
 
@@ -56,6 +58,8 @@ $ create-code add
 ### 常见问题：
 1. 格式化代码未完全修复，需要手动修复！
 eslint格式化失败，一般是因为所需依赖未找到。
+2. 文件目录: (**/src)不存在，请确认文件路径是否正确.
+请确认配置文件是否在根目录下的文件夹下。如：`schema/test`
 
 
 ### CHANGELOG
@@ -63,4 +67,17 @@ eslint格式化失败，一般是因为所需依赖未找到。
 #### 0.1.0
 
 * init project
+
+#### 0.1.1
+
+* 修复eslint putout文件执行路径问题
+
+#### 0.1.2
+
+* 修复代码生成路径错误的问题
+
+#### 0.1.3
+
+* 修复eslint获取路径问题
+* 新增项目目录src文件夹存在判断
 
