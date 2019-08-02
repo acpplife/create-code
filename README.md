@@ -68,26 +68,6 @@ eslint格式化失败，一般是因为所需依赖未找到。
 请确认配置文件是否在根目录下的文件夹下。如：`schema/test`
 
 
-### CHANGELOG
+### [CHANGELOG](CHANGELOG.md)
 
-#### 0.1.0
-
-* init project
-
-#### 0.1.1
-
-* 修复eslint putout文件执行路径问题
-
-#### 0.1.2
-
-* 修复代码生成路径错误的问题
-
-#### 0.1.3
-
-* 修复eslint获取路径问题
-* 新增项目目录src文件夹存在判断
-
-#### 0.1.4
-
-* 支持generatePath配置，可以指定代码生成的目录
 
