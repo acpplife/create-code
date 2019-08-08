@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
-const doWithTable = require('../lib/scripts/react-antd-table')
-const doWithIceReactMaterial = require('../lib/scripts/ice-react-material')
+const doWithTable = require('../../lib/scripts/react-antd-table')
+const doWithIceReactMaterial = require('../../lib/scripts/ice-react-material')
 
 module.exports = function main () {
   const questions = [

@@ -2,8 +2,8 @@ const path = require('path');
 const { tmpdir } = require('os');
 const fse = require('fs-extra');
 const camelCase = require('camelcase');
-const downloadNpm = require('../lib/downloadNpm');
-const log = require('../lib/log');
+const downloadNpm = require('../../lib/downloadNpm');
+const log = require('../../lib/log');
 
 async function addBlock(options = {}) {
   const { npmName, destDir, tempDir } = options;
