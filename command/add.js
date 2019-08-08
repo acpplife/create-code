@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
-const doWithTable = require('./scripts/react-antd-table')
+const doWithTable = require('../lib/scripts/react-antd-table')
+const doWithIceReactMaterial = require('../lib/scripts/ice-react-material')
 
 module.exports = function main () {
   const questions = [
@@ -9,8 +10,12 @@ module.exports = function main () {
       message: 'which type of block do you want to add ?',
       choices: [
         {
-          name: 'react-antd-table (table list based on react antd)',
+          name: 'react-antd-table (基于antd、umi的列表CRUD)',
           value: 'react-antd-table',
+        },
+        {
+          name: 'ice-react-materials (飞冰react物料源，包含较多常用的组件)',
+          value: 'ice-react-materials',
         },
         {
           name: 'more (more blocks is on the way!)',
@@ -28,6 +33,9 @@ module.exports = function main () {
       switch(type) {
       case 'react-antd-table':
         doWithTable()
+        break
+      case 'ice-react-materials':
+        doWithIceReactMaterial()
         break
         
       default:

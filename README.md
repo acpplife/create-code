@@ -6,12 +6,18 @@
 
 ## 特性
 
+### react-antd-table
+
 * 通过json文件配置在本地项目生成基础增删改查代码.
 * 已应用于生产线，通用的增删改查功能相比普通开发至少提效8倍以上.
 * 数据新增、编辑支持模态框及新页面（包含分组）两种展现，更多配置参考[基础配置api](https://www.yuque.com/ssisl/gabiv1/fweu9a).
 * 表单基础支持业务场景常用的15种控件，详细查看[dataSchema配置api](https://www.yuque.com/ssisl/gabiv1/tv69bu).
 * 仅包含初始化代码生成，所以更便于根据自己的业务场景扩展维护.
 * 组件编写使用React Hooks语法.
+
+### ice-react-materials
+
+* 支持阿里飞冰react物料源当前487个区块的快捷添加.
 
 ### 安装
 

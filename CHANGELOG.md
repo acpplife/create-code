@@ -1,3 +1,7 @@
+#### 0.2.1
+
+* `create-code add`新增阿里飞冰react物料源当前487个区块的快捷添加，具体可查看`create-code --help`.
+
 #### 0.2.0
 
 * 新增属性`onlyTableListMode`仅生成列表功能.

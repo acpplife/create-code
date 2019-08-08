@@ -2,21 +2,62 @@
 
 const program = require('commander');
 const chalk = require('chalk');
-const add = require('../lib/add');
-
+const add = require('../command/add');
+const utils = require('../lib/utils')
 const pkg = require('../package.json');
 
 const { log } = console
+
+// commander passes the Command object itself as options,
+// extract only actual options into a fresh object.
+function cleanArgs(cmd) {
+  const args = {};
+  if (cmd) {
+    cmd.options.forEach((o) => {
+      const key = utils.camelize(o.long.replace(/^--/, ''));
+      // if an option is not present and Command has a method with the same name
+      // it should not be copied
+      if (typeof cmd[key] !== 'function' && typeof cmd[key] !== 'undefined') {
+        args[key] = cmd[key];
+      }
+    });
+    if (cmd.parent && cmd.parent.rawArgs) {
+      // eslint-disable-next-line prefer-destructuring
+      args.command = cmd.parent.rawArgs[2];
+    }
+  }
+  return args;
+}
 
 program.version(pkg.version)
   .option('add', 'add a new block.')
   .option('a', 'add a new block.')
 
 program
-  .command('*')
-  .action((env) => {
-    log(chalk.red(`create-code: ${env} is not a create-code command. use create-code --help for help.`));
+  .command('addBlock <npmName>')
+  .description('add block to current directory')
+  .option(
+    '-n, --name <name>',
+    'Specify the block directory name like CustomBlock'
+  )
+  .action((npmName, cmd) => {
+    const options = cleanArgs(cmd);
+    options.npmName = npmName;
+    // eslint-disable-next-line global-require
+    require('../command/addBlock')(options);
   });
+
+// add some useful info on help
+program.on('--help', () => {
+  log('');
+  log('Examples:');
+  log()
+  log('  $ create-code add')
+  log('  $ create-code add @icedesign/user-landing-block');
+  log('  $ create-code add @icedesign/user-landing-block -n CustomBlock');
+  log()
+  log(`Run ${chalk.cyan('create-code <command> --help')} for detailed usage of given command.`);
+});
 
 program.parse(process.argv);
 
