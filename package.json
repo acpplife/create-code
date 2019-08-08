@@ -1,6 +1,6 @@
 {
   "name": "create-code",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "The command tool based on umi antd to create code blocks",
   "bin": {
     "create-code": "./bin/create-code"
