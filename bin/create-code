@@ -2,7 +2,6 @@
 
 const program = require('commander');
 const chalk = require('chalk');
-const add = require('../command/add');
 const utils = require('../lib/utils')
 const pkg = require('../package.json');
 
@@ -44,7 +43,7 @@ program
     const options = cleanArgs(cmd);
     options.npmName = npmName;
     // eslint-disable-next-line global-require
-    require('../command/addBlock')(options);
+    require('./command/addBlock')(options);
   });
 
 // add some useful info on help
@@ -62,7 +61,7 @@ program.on('--help', () => {
 program.parse(process.argv);
 
 if (program.add || program.a) {
-  add(process.argv);
+  require('./command/add')(process.argv);
 }
 
 if (!process.argv.slice(2).length) {
